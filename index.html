@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts Book</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2 class="main-heading">Contacts Book</h2>
+
+        <div id="sidebarCount" class="sidebar-count">
+            0 Contacts
+        </div>
+
+        <button class="add-btn" onclick="openModal()">
+            + Add Contact
+        </button>
+
+        <div class="contacts-symbol">
+            <span class="symbol">📇</span> Contacts
+        </div>
+
+        <div id="sidebarList"></div>
+    </div>
+
+    <div class="main">
+
+        <div class="top-bar">
+            <div class="search-sort">
+
+                <input 
+                    type="text" 
+                    id="search" 
+                    placeholder="Search contacts..."
+                >
+
+                <button 
+                    class="sort-btn active" 
+                    onclick="setSort('asc', event)"
+                >
+                    A-Z
+                </button>
+
+                <button 
+                    class="sort-btn" 
+                    onclick="setSort('desc', event)"
+                >
+                    Z-A
+                </button>
+
+                <span class="sort-icon">
+                    <i class="fa-solid fa-arrow-up-arrow-down"></i>
+                </span>
+
+            </div>
+        </div>
+
+        <div id="contactContainer"></div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+
+            <h3 id="modalTitle">Add Contact</h3>
+
+            <input type="text" id="name" placeholder="Name *">
+            <input type="text" id="mobile" placeholder="Mobile *">
+            <input type="text" id="email" placeholder="Email (optional)">
+            <input type="file" id="profilePic" accept="image/*">
+
+            <button onclick="saveContact()">Save</button>
+            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+
+        </div>
+    </div>
+
+    <script src="javascript.js"></script>
+
+</body>
+</html>
